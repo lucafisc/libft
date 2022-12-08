@@ -1,14 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lde-ross <lde-ross@student.42berlin.de>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/12/08 09:53:31 by lde-ross          #+#    #+#             */
+/*   Updated: 2022/12/08 09:53:46 by lde-ross         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-    new->next = *lst;
-    *lst = new;
+	new->next = *lst;
+	*lst = new;
 }
-
-
-
-    // t_list *pt;
-    // pt = *lst;
-    // new->next = pt;
-    // *lst = new;

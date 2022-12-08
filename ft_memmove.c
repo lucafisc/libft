@@ -3,46 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lde-ross <lde-ross@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lde-ross <lde-ross@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 11:33:31 by lde-ross          #+#    #+#             */
-/*   Updated: 2022/12/01 16:14:40 by lde-ross         ###   ########.fr       */
+/*   Updated: 2022/12/07 19:54:26 by lde-ross         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char		*pt_d;
-	const char	*pt_s;
-	size_t 		i;
-	pt_d = dst;
-	pt_s = src;
-	if (pt_d > pt_s)
+	unsigned char	*pt_d;
+	unsigned char	*pt_s;
+
+	if (!dst && !src)
+		return (NULL);
+	pt_d = (unsigned char *)dst;
+	pt_s = (unsigned char *)src;
+	if (pt_d <= pt_s)
 	{
-		i = len;
-		while (i > 0)
-		{
-			pt_d[i - 1] = pt_s[i - 1];
-			i--;
-		}
+		return (ft_memcpy(pt_d, pt_s, len));
 	}
-	else
+	while (len > 0)
 	{
-		i = 0;
-		while (i < len)
-		{
-			pt_d[i] = pt_s[i];
-			i++;			
-		}	
+		pt_d[len - 1] = pt_s[len - 1];
+		len--;
 	}
 	return (dst);
 }
 
 // int main ()
 // {
-//   char str[] = "memmove can be very useful......";
-//   ft_memmove (str+20,str+15,11);
+//   char s1[] = "Hello, lorem ipsum dolum amet";
+//   ft_memmove(s1, s1 + 99, 1);
 //   return 0;
 // }

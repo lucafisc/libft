@@ -3,19 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lde-ross <lde-ross@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lde-ross <lde-ross@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 11:14:19 by lde-ross          #+#    #+#             */
-/*   Updated: 2022/11/30 19:06:36 by lde-ross         ###   ########.fr       */
+/*   Updated: 2022/12/07 19:42:41 by lde-ross         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-	size_t i;
-	unsigned char *pt;
+	size_t			i;
+	unsigned char	*pt;
+
 	i = 0;
 	pt = s;
 	while (i < n)

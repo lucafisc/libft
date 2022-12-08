@@ -3,18 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lde-ross <lde-ross@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lde-ross <lde-ross@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 12:16:48 by lde-ross          #+#    #+#             */
-/*   Updated: 2022/12/01 16:15:02 by lde-ross         ###   ########.fr       */
+/*   Updated: 2022/12/07 19:56:29 by lde-ross         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlcpy(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
+
 	i = 0;
 	if (dstsize == 0)
 		return (ft_strlen(src));

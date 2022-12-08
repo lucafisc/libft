@@ -3,20 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lde-ross <lde-ross@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lde-ross <lde-ross@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 12:03:36 by lde-ross          #+#    #+#             */
-/*   Updated: 2022/12/01 16:12:17 by lde-ross         ###   ########.fr       */
+/*   Updated: 2022/12/08 10:12:16 by lde-ross         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int get_len(int n)
+int	get_len(int n)
 {
 	int	i;
 
-	i = 0;
+	i = 1;
+	if (n < 0)
+		i++;
 	while (n != 0)
 	{
 		n = n / 10;
@@ -25,11 +27,12 @@ int get_len(int n)
 	return (i);
 }
 
-char *str_rev(char *str)
+char	*str_rev(char *str)
 {
-	char temp;
-	int	len;
-	int i;
+	char	temp;
+	int		len;
+	int		i;
+
 	i = 0;
 	len = ft_strlen(str);
 	while (i < len / 2)
@@ -42,28 +45,33 @@ char *str_rev(char *str)
 	return (str);
 }
 
-char *ft_itoa(int n)
+long int	is_negative(int n)
 {
-	int		len;
-	long int num;
-	int		i;
-	char	*pt;
-	len = get_len(n);
+	long int	num;
+
 	num = n;
 	if (num < 0)
-	{
-		num = num * (-1);
-		len++;
-	}
+		return (num * (-1));
+	return (num);
+}
+
+char	*ft_itoa(int n)
+{
+	int			len;
+	long int	num;
+	int			i;
+	char		*pt;
+
+	len = get_len(n);
+	num = is_negative(n);
 	pt = malloc(sizeof(char) * (len));
 	if (!pt)
 		return (0);
 	i = 0;
 	while (num > 9)
 	{
-		pt[i] = (num % 10) + '0';
+		pt[i++] = (num % 10) + '0';
 		num = num / 10;
-		i++;
 	}
 	pt[i] = num + '0';
 	if (n < 0)
@@ -76,6 +84,6 @@ char *ft_itoa(int n)
 // int	main(void)
 // {
 // 	char *pt;
-// 	pt = ft_itoa(-2147483648LL);
-// 	printf("%s", pt);
+// 	pt = ft_itoa(2);
+// 	// printf("%s\n", pt);
 // }

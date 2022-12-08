@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   atoi.c                                             :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lde-ross <lde-ross@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lde-ross <lde-ross@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 09:32:50 by lde-ross          #+#    #+#             */
-/*   Updated: 2022/11/29 09:34:04 by lde-ross         ###   ########.fr       */
+/*   Updated: 2022/12/07 19:42:04 by lde-ross         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	is_space(char x)
 {
-	if (x == '\t' || x == '\n' || x == '\v' ||
-		x == '\f' || x == '\r' || x == ' ')
+	if (x == '\t' || x == '\n' || x == '\v'
+		|| x == '\f' || x == '\r' || x == ' ')
 		return (1);
 	else
 		return (0);
@@ -31,29 +31,23 @@ int	is_sign(char x)
 
 int	ft_atoi(const char *str)
 {
-	int	i;
 	int	sign;
 	int	result;
 
-	if (!str)
-		return (0);
-	i = 0;
 	result = 0;
+	while (is_space(*str))
+		str++;
 	sign = 1;
-	while (is_space(str[i]))
+	if (is_sign(*str))
 	{
-		i++;
+		if (*str == '-')
+			sign = -1;
+		str++;
 	}
-	if (is_sign(str[i]))
+	while (ft_isdigit(*str))
 	{
-		if (str[i] == '-')
-			sign = sign * -1;
-		i++;
-	}
-	while (ft_isdigit(str[i]))
-	{
-		result = result * 10 + (str[i] - '0');
-		i++;
+		result = result * 10 + (*str - '0');
+		str++;
 	}
 	return (sign * result);
 }

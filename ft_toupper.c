@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lde-ross <lde-ross@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lde-ross <lde-ross@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 12:21:36 by lde-ross          #+#    #+#             */
-/*   Updated: 2022/12/01 16:14:30 by lde-ross         ###   ########.fr       */
+/*   Updated: 2022/12/08 09:44:06 by lde-ross         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@ int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
 		return (c - 32);
-	return c;
+	return (c);
 }
