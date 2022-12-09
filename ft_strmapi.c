@@ -6,7 +6,7 @@
 /*   By: lde-ross <lde-ross@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 09:46:35 by lde-ross          #+#    #+#             */
-/*   Updated: 2022/12/08 09:46:39 by lde-ross         ###   ########.fr       */
+/*   Updated: 2022/12/09 12:14:57 by lde-ross         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*pt;
 	int		i;
 
+	if (!s)
+		return (0);
 	len = ft_strlen(s) + 1;
 	pt = malloc(sizeof(char) * len);
 	if (!pt)

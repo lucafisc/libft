@@ -6,7 +6,7 @@
 /*   By: lde-ross <lde-ross@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 14:36:39 by lde-ross          #+#    #+#             */
-/*   Updated: 2022/12/08 09:44:43 by lde-ross         ###   ########.fr       */
+/*   Updated: 2022/12/09 12:21:21 by lde-ross         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*pt;
 	size_t	i;
 
+	if (!s)
+		return (0);
 	if (start >= ft_strlen(s))
 		return (ft_strdup(""));
 	pt = malloc(sizeof(char) * len + 1);

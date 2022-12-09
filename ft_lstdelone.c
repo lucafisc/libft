@@ -6,7 +6,7 @@
 /*   By: lde-ross <lde-ross@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 19:51:47 by lde-ross          #+#    #+#             */
-/*   Updated: 2022/12/08 16:36:24 by lde-ross         ###   ########.fr       */
+/*   Updated: 2022/12/09 11:41:29 by lde-ross         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
+	if (!lst || !del)
+		return;
 	del(lst->content);
 	free(lst);
 }

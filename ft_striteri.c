@@ -6,7 +6,7 @@
 /*   By: lde-ross <lde-ross@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 10:47:33 by lde-ross          #+#    #+#             */
-/*   Updated: 2022/12/07 19:56:01 by lde-ross         ###   ########.fr       */
+/*   Updated: 2022/12/09 12:06:17 by lde-ross         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	int	i;
 
+	if (!s || !f)
+		return;
 	i = 0;
 	while (s[i])
 	{
